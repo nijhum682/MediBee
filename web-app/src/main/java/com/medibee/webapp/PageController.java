@@ -15,6 +15,7 @@ public class PageController {
   factory.setReadTimeout(Duration.ofSeconds(3)); client=RestClient.builder().baseUrl(url).requestFactory(factory).build();
  }
  @GetMapping("/") String home(){ return "public/home"; }
+ @GetMapping("/about") String about(){ return "public/about"; }
  @GetMapping("/login") String login(){ return "auth/login"; }
  @GetMapping("/register") String register(){ return "auth/register"; }
  @GetMapping("/doctors") String doctors(){ return "public/doctors"; }

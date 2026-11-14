@@ -24,7 +24,7 @@ Three logical databases are initialized only when the volume is first created. N
 Postgres profile uses Hibernate validation; there are no business entities or schemas yet. Add migrations with each domain feature. The local Docker bootstrap shares a DB login; isolated per-service DB users are required before deployment.
 
 ## Implemented baseline
-Five executable Spring Boot apps; health endpoints; three routed service status APIs; a real server-rendered system health page; responsive sea-green landing page, login/register and fictional doctor-directory UI shells; CI, Docker and API documentation.
+Five executable Spring Boot apps; health endpoints; three routed service status APIs; a real server-rendered system health page; responsive sea-green landing page, login/register and an unavailable-state doctor directory UI shell; CI, Docker and API documentation.
 
 ## Intentionally pending
 Login, registration, JWT, staff approval, assignments, booking, queue, records, prescriptions and AI. Preview form controls are disabled. No demo admin passwords or production security claims. Public web routes are allowlisted; all other web routes are denied. CSRF remains enabled. Backend services currently expose only non-sensitive bootstrap endpoints. Implement service JWT/resource authorization before adding protected APIs. Keep backend ports private in production.

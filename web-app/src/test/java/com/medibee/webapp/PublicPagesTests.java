@@ -15,7 +15,7 @@ class PublicPagesTests {
     @Autowired MockMvc mvc;
 
     @Test void rendersPublicPagesWithoutLogin() throws Exception {
-        for (String path : new String[]{"/", "/login", "/register", "/doctors"}) {
+        for (String path : new String[]{"/", "/about", "/login", "/register", "/doctors"}) {
             mvc.perform(get(path)).andExpect(status().isOk())
                 .andExpect(content().string(containsString("MediBee")));
         }
