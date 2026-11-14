@@ -1,0 +1,5 @@
+.git
+**/target
+.tools
+.runtime
+.env

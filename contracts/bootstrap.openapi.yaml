@@ -1,0 +1,30 @@
+openapi: 3.0.3
+info:
+  title: MediBee Bootstrap API
+  version: 0.1.0
+  description: Only service status endpoints are implemented. Feature contracts must be reviewed before implementation.
+servers:
+  - url: http://localhost:8080
+paths:
+  /api/v1/{service}/status:
+    get:
+      summary: Bootstrap service connectivity
+      parameters:
+        - in: path
+          name: service
+          required: true
+          schema:
+            type: string
+            enum: [identity, appointments, medical]
+      responses:
+        '200':
+          description: Service available
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [service, status, stage]
+                properties:
+                  service: {type: string}
+                  status: {type: string, enum: [UP]}
+                  stage: {type: string, enum: [bootstrap]}
